@@ -6,7 +6,9 @@ These instructions are intended to set up a deep learning environment for GPU-po
 After following these instructions you'll have:
 
 1. Ubuntu 16.04. 
-2. Cuda 9.0 drivers installed.
+2. Cuda 9.1 drivers installed.
+
+
 3. A conda environment with python 3.6.    
 4. The latest tensorflow version with gpu support.   
 
@@ -65,17 +67,17 @@ sudo apt-get install openjdk-8-jdk git python-dev python3-dev python-numpy pytho
 ``` bash
 # The 16.04 installer works with 16.10.
 # download drivers
-curl -O http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_9.0.176-1_amd64.deb
+wget -O cuda-repo-ubuntu1604-9-1-local_9.1.85-1_amd64.deb  https://developer.nvidia.com/compute/cuda/9.1/Prod/local_installers/cuda-repo-ubuntu1604-9-1-local_9.1.85-1_amd64
 
 # download key to allow installation
 sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub
 
 # install actual package
-sudo dpkg -i ./cuda-repo-ubuntu1604_9.0.176-1_amd64.deb
+sudo dpkg -i ./cuda-repo-ubuntu1604-9-1-local_9.1.85-1_amd64.deb
 
 #  install cuda (but it'll prompt to install other deps, so we try to install twice with a dep update in between
 sudo apt-get update
-sudo apt-get install cuda-9-0   
+sudo apt-get install cuda-9-1
 ```    
 
 2a. reboot Ubuntu
